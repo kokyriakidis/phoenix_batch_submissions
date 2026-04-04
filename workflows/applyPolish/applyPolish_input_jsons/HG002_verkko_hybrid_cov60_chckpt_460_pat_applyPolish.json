@@ -1,0 +1,7 @@
+{
+  "runApplyPolish.applyPolish.outPrefix": "HG002_verkko_hybrid_cov60_chckpt_460_pat",
+  "runApplyPolish.applyPolish.asmRaw": "/private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/DeepPolisher/input_files/HG002_verkko_hybrid_cov60_chckpt_460.paternal.fasta",
+  "runApplyPolish.applyPolish.polishingVcf": "/private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/DeepPolisher/HG002_verkko_hybrid_cov60_chckpt_460/analysis/DeepPolisher_outputs/a7ce50fa-85ad-4d80-977d-56972cd267b2/polisher_output.no_filters.vcf.gz",
+  "runApplyPolish.applyPolish.HaplotypeLabel": "pat",
+  "runApplyPolish.applyPolish.GenotypeToPolish": "2"
+}
