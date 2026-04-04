@@ -1,19 +1,19 @@
 #### On phoenix cluster
 
 # create working directories
-mkdir -p /private/groups/patenlab/mira/hprc_polishing/hprc_int_asm/merqury_hybrid_k21_unfiltered/
-mkdir -p /private/groups/patenlab/mira/hprc_polishing/hprc_int_asm/merqury_hybrid_k31_unfiltered/
+mkdir -p /private/groups/migalab/kkyriaki/hprc_polishing/hprc_int_asm/merqury_hybrid_k21_unfiltered/
+mkdir -p /private/groups/migalab/kkyriaki/hprc_polishing/hprc_int_asm/merqury_hybrid_k31_unfiltered/
 
 # update github repos
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/migalab/kkyriaki/phoenix_batch_submissions pull
 
-git -C /private/home/mmastora/progs/hpp_production_workflows pull
+git -C /private/home/kkyriaki/progs/hpp_production_workflows pull
 
 # Run hybrid k21
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_int_asm/merqury_hybrid_k21_unfiltered/
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_int_asm/merqury_hybrid_k21_unfiltered/
 
 # copy files in
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/merqury/hprc_int_asm_meryl_hybrid_unfiltered/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/polishing/merqury/hprc_int_asm_meryl_hybrid_unfiltered/* ./
 
 # make submit log dir
 mkdir -p merqury_hybrid_k21_submit_logs
@@ -24,10 +24,10 @@ sbatch \
      HPRC_int_asm_batch2_3_4.samples.csv
 
 # run hybrid k31
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_int_asm/merqury_hybrid_k31_unfiltered/
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_int_asm/merqury_hybrid_k31_unfiltered/
 
 # copy files in
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/merqury/hprc_int_asm_meryl_hybrid/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/polishing/merqury/hprc_int_asm_meryl_hybrid/* ./
 
 # make submit log dir
 mkdir -p merqury_hybrid_k31_submit_logs
@@ -39,7 +39,7 @@ sbatch \
 
 
 #### Collate merqury k21 results
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_int_asm/merqury_hybrid_k21_unfiltered
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_int_asm/merqury_hybrid_k21_unfiltered
 
 echo sample,assembly,WholeGenomeQV_Merqury_Hap1,WholeGenomeQV_Merqury_Hap2,WholeGenomeQV_Merqury_Dip,InsideConfQV_Merqury_Hap1,InsideConfQV_Merqury_Hap2,InsideConfQV_Merqury_Dip \
 > all_samples_results.csv
@@ -64,7 +64,7 @@ done
 
 
 #### Collate merqury k31 results
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_int_asm/merqury_hybrid_k31_unfiltered
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_int_asm/merqury_hybrid_k31_unfiltered
 
 echo sample,assembly,WholeGenomeQV_Merqury_Hap1,WholeGenomeQV_Merqury_Hap2,WholeGenomeQV_Merqury_Dip,InsideConfQV_Merqury_Hap1,InsideConfQV_Merqury_Hap2,InsideConfQV_Merqury_Dip \
 > all_samples_results.csv
@@ -87,4 +87,4 @@ echo ${line},raw,${raw_wg_h1},${raw_wg_h2},${raw_wg_d},${raw_conf_h1},${raw_conf
 echo ${line},polished,${pol_wg_h1},${pol_wg_h2},${pol_wg_d},${pol_conf_h1},${pol_conf_h2},${pol_conf_d} >> all_samples_results.csv ;\
 done
 
-/private/groups/patenlab/mira/hprc_polishing/hprc_int_asm/meryl_hybrid/HG04115/meryl_hybrid_outputs/meryl/HG04115.hybrid.meryl
+/private/groups/migalab/kkyriaki/hprc_polishing/hprc_int_asm/meryl_hybrid/HG04115/meryl_hybrid_outputs/meryl/HG04115.hybrid.meryl

@@ -1,7 +1,7 @@
 {
-  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/patenlab/mira/phoenix_batch_executions/workflows/applyPolish/PAN027_patched_pat_DV_pass/analysis/applyPolish_outputs/PAN027_patched_pat_DV_pass_pat.polished.fasta",
-  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/patenlab/mira/phoenix_batch_executions/workflows/applyPolish/PAN027_patched_mat_DV_pass/analysis/applyPolish_outputs/PAN027_patched_mat_DV_pass_mat.polished.fasta",
-  "hprc_polishing_QC.polishingVcf": "/private/groups/patenlab/mira/phoenix_batch_executions/workflows/deepvariant/PAN027_patched/analysis/deepvariant_outputs/PAN027_patched_deepvariant.PASS.vcf.gz",
+  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/applyPolish/PAN027_patched_pat_DV_pass/analysis/applyPolish_outputs/PAN027_patched_pat_DV_pass_pat.polished.fasta",
+  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/applyPolish/PAN027_patched_mat_DV_pass/analysis/applyPolish_outputs/PAN027_patched_mat_DV_pass_mat.polished.fasta",
+  "hprc_polishing_QC.polishingVcf": "/private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/deepvariant/PAN027_patched/analysis/deepvariant_outputs/PAN027_patched_deepvariant.PASS.vcf.gz",
   "hprc_polishing_QC.sampleReadsIlm": [
     "/private/groups/migalab/mcechova/washu/Illumina/PAN027.cell.HTTMGDSX2_CCTGCAAGAC-GCATCATAGC_L002_R1.fastq.gz",
     "/private/groups/migalab/mcechova/washu/Illumina/PAN027.cell.HTTMGDSX2_CCTGCAAGAC-GCATCATAGC_L002_R2.fastq.gz"

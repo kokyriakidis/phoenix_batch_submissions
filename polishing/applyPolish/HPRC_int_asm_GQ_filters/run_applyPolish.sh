@@ -6,14 +6,14 @@
 
 # Generate toil json files from csv sample table
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/applyPolish/HPRC_int_asm_GQ_filters/applyPolish_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/applyPolish/HPRC_int_asm_GQ_filters/applyPolish_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../HPRC_int_asm_GQfilters.samples.csv \
      --field_mapping ../applyPolish.input.mapping.mat.csv \
      --workflow_name applyPolish.mat
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../HPRC_int_asm_GQfilters.samples.csv \
      --field_mapping ../applyPolish.input.mapping.pat.csv \
      --workflow_name applyPolish.pat
@@ -25,22 +25,22 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ###############################################################################
 
 ## on HPC...
-cd /private/groups/patenlab/mira
+cd /private/groups/patenlab/kkyriaki
 
 ## clone repo
-git clone https://github.com/miramastoras/phoenix_batch_submissions.git
+git clone https://github.com/kkyriaki/phoenix_batch_submissions.git
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/patenlab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that hpp production wdls github repo is up to date
-git -C /private/home/mmastora/progs/hpp_production_workflows pull
+git -C /private/home/kkyriaki/progs/hpp_production_workflows pull
 
 # move to work dir
-cd /private/groups/patenlab/mira/hprc_polishing/qv_problems/HPRC_intermediate_asm/GQ_filters/applyPolish
+cd /private/groups/patenlab/kkyriaki/hprc_polishing/qv_problems/HPRC_intermediate_asm/GQ_filters/applyPolish
 
 ## get files to run in polishing folder ...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/applyPolish/HPRC_int_asm_GQ_filters/* ./
+cp -r /private/groups/patenlab/kkyriaki/phoenix_batch_submissions/polishing/applyPolish/HPRC_int_asm_GQ_filters/* ./
 
 mkdir applyPolish_submit_logs
 
@@ -56,7 +56,7 @@ sbatch \
 
 
 # on hprc after entire batch has finished
-cd /private/groups/patenlab/mira/hprc_polishing/qv_problems/HPRC_intermediate_asm/GQ_filters/applyPolish
+cd /private/groups/patenlab/kkyriaki/hprc_polishing/qv_problems/HPRC_intermediate_asm/GQ_filters/applyPolish
 
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
       --input_data_table ./HPRC_int_asm_GQfilters.samples.csv \

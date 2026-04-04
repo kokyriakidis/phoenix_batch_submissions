@@ -4,9 +4,9 @@
 
 ## on personal computer...
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/hprc_DeepPolisher/hprc_verkko_assemblies_verkko_model1/hprc_DeepPolisher_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/hprc_DeepPolisher/hprc_verkko_assemblies_verkko_model1/hprc_DeepPolisher_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../hprc_verkko_samples_verkko_model1.csv \
      --field_mapping ../hprc_DeepPolisher_input_mapping.csv \
      --workflow_name hprc_DeepPolisher
@@ -18,16 +18,16 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ###############################################################################
 
 ## on HPC...
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_deepPolisher_wf_runs/phoenix_batch_submissions_manuscript/hprc_verkko_assemblies_verkko_model1/
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_deepPolisher_wf_runs/phoenix_batch_submissions_manuscript/hprc_verkko_assemblies_verkko_model1/
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/migalab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 
 ## get files to run hifiasm in sandbox...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/hprc_DeepPolisher/hprc_verkko_assemblies_verkko_model1/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/polishing/hprc_DeepPolisher/hprc_verkko_assemblies_verkko_model1/* ./
 
 mkdir -p slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
@@ -49,7 +49,7 @@ sbatch \
 ##                             write output files to csv                     ##
 ###############################################################################
 
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_deepPolisher_wf_runs/phoenix_batch_submissions_manuscript/hprc_verkko_assemblies_verkko_model1
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_deepPolisher_wf_runs/phoenix_batch_submissions_manuscript/hprc_verkko_assemblies_verkko_model1
 
 ## collect location of QC results
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \

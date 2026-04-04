@@ -1,7 +1,7 @@
 {
   "longReadAlignmentScattered.correctBamOptions": "--maxDiv 1",
   "longReadAlignmentScattered.preset": "map-ont",
-  "longReadAlignmentScattered.assemblyFasta": "/private/groups/patenlab/mira/hprc_polishing/data/HG005_y2_polishing/HG005.trio_hifiasm_0.19.5.DC_1.2_40x.dip.fa",
+  "longReadAlignmentScattered.assemblyFasta": "/private/groups/migalab/kkyriaki/hprc_polishing/data/HG005_y2_polishing/HG005.trio_hifiasm_0.19.5.DC_1.2_40x.dip.fa",
   "longReadAlignmentScattered.secphaseOptions": "--ont",
   "longReadAlignmentScattered.enableRunningSecphase": true,
   "longReadAlignmentScattered.aligner": "minimap2",

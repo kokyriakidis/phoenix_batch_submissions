@@ -6,9 +6,9 @@
 
 # Remove top up data from data table
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/annotate_edit_with_fp_kmers/HPRC_verkko_asm_verkko_model1/annotate_edit_with_fp_kmers_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/annotate_edit_with_fp_kmers/HPRC_verkko_asm_verkko_model1/annotate_edit_with_fp_kmers_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../hprc_verkko_deepPolisher_verkko_model1.csv \
      --field_mapping ../annotate_edit_with_fp_kmers_input_mapping.csv \
      --workflow_name annotate_edit_with_fp_kmers
@@ -20,24 +20,24 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ###############################################################################
 
 ## on HPC...
-cd /private/home/mmastora/progs
+cd /private/home/kkyriaki/progs
 
 ## clone flagger repo
 git clone https://github.com/mobinasri/flagger.git
 git checkout polishing_temp
 
 ## check that github repo is up to date
-git -C  /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C  /private/groups/migalab/mira/phoenix_batch_submissions pull
 
 ## check that github repo is up to date
-git -C /private/home/mmastora/progs/flagger pull
+git -C /private/home/kkyriaki/progs/flagger pull
 
 # move to working dir
-mkdir -p /private/groups/patenlab/mira/hprc_polishing/hprc_int_asm/HPRC_verkko_model1/annotate_edit_with_fp_kmers
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_int_asm/HPRC_verkko_model1/annotate_edit_with_fp_kmers
+mkdir -p /private/groups/migalab/mira/hprc_polishing/hprc_int_asm/HPRC_verkko_model1/annotate_edit_with_fp_kmers
+cd /private/groups/migalab/mira/hprc_polishing/hprc_int_asm/HPRC_verkko_model1/annotate_edit_with_fp_kmers
 
 ## get files
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/annotate_edit_with_fp_kmers/HPRC_verkko_asm_verkko_model1/* ./
+cp -r /private/groups/migalab/mira/phoenix_batch_submissions/polishing/annotate_edit_with_fp_kmers/HPRC_verkko_asm_verkko_model1/* ./
 
 mkdir -p slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
@@ -51,9 +51,9 @@ sbatch \
      --exclude=phoenix-[09,10,22,23,24,18] \
      --mem=400gb \
      --mail-type=FAIL,END \
-     --mail-user=mmastora@ucsc.edu \
+     --mail-user=kkyriaki@ucsc.edu \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
-     --wdl /private/home/mmastora/progs/hpp_production_workflows/QC/wdl/tasks/annotate_edit_with_fp_kmers.wdl \
+     --wdl /private/home/kkyriaki/progs/hpp_production_workflows/QC/wdl/tasks/annotate_edit_with_fp_kmers.wdl \
      --sample_csv hprc_verkko_deepPolisher_verkko_model1.csv \
      --input_json_path '../annotate_edit_with_fp_kmers_input_jsons/${SAMPLE_ID}_annotate_edit_with_fp_kmers.json'
 
@@ -62,7 +62,7 @@ sbatch \
 ##                             write output files                   ##
 ###############################################################################
 
-cd /private/groups/patenlab/mira/hprc_polishing/qv_problems/HPRC_intermediate_asm/optimize_GQ_filters/annotate_edit_with_fp_kmers
+cd /private/groups/migalab/mira/hprc_polishing/qv_problems/HPRC_intermediate_asm/optimize_GQ_filters/annotate_edit_with_fp_kmers
 
 # get vcf files for downloading to google drive
 grep -v "sample_id" hprc_verkko_hprc_deepPolisher.csv | cut -f1 -d "," \

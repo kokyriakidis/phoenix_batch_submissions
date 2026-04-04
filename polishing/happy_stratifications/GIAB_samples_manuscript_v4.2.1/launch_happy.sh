@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --partition=medium
-#SBATCH --mail-user=mmastora@ucsc.edu
+#SBATCH --mail-user=kkyriaki@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
 #SBATCH --threads-per-core=1
@@ -39,7 +39,7 @@ echo "${vcf_file}"
 mkdir -p ${sample_id}
 cd ${sample_id}
 
-source /private/home/mmastora/progs/miniconda3/etc/profile.d/conda.sh
+source /private/home/kkyriaki/progs/miniconda3/etc/profile.d/conda.sh
 conda activate analysis
 
 GIAB_basename=`basename ${bed_file}`
@@ -47,7 +47,7 @@ GIAB_basename=`basename ${bed_file}`
 mkdir -p `pwd`/happy_stratifications_outputs/
 
 # run happy
-bash /private/home/mmastora/progs/scripts/GIAB_happy_stratifications.sh \
+bash /private/home/kkyriaki/progs/scripts/GIAB_happy_stratifications.sh \
     ${vcf_file} \
     ${bed_file} \
     `pwd`/happy_stratifications_outputs/${sample_id}_happy_out \

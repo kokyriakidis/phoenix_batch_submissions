@@ -4,9 +4,9 @@
 
 ## on personal computer...
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/deepvariant/hprc_manuscript/deepvariant_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/deepvariant/hprc_manuscript/deepvariant_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../hprc_deepvariant.csv \
      --field_mapping ../deepvariant_input_mapping.csv \
      --workflow_name deepvariant
@@ -18,16 +18,16 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ###############################################################################
 
 ## on HPC...
-cd /private/groups/patenlab/mira/hprc_polishing/y2_alt_polishers/HPRC_samples_DV
+cd /private/groups/migalab/kkyriaki/hprc_polishing/y2_alt_polishers/HPRC_samples_DV
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/migalab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 
 ## get files to run hifiasm in sandbox...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/deepvariant/hprc_manuscript/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/polishing/deepvariant/hprc_manuscript/* ./
 
 mkdir -p slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
@@ -36,14 +36,14 @@ export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 grep -v "sample_id" hprc_deepvariant.csv | cut -f1 -d"," | while read line; do
     hap1=`grep $line hprc_deepvariant.csv | cut -f11 -d","`
     hap2=`grep $line hprc_deepvariant.csv | cut -f10 -d","`
-    cat $hap1 $hap2 > /private/groups/patenlab/mira/hprc_polishing/y2_alt_polishers/HPRC_samples_DV/assembly/${line}_diploid.fasta.gz
-    gunzip /private/groups/patenlab/mira/hprc_polishing/y2_alt_polishers/HPRC_samples_DV/assembly/${line}_diploid.fasta.gz
-    samtools faidx /private/groups/patenlab/mira/hprc_polishing/y2_alt_polishers/HPRC_samples_DV/assembly/${line}_diploid.fasta
+    cat $hap1 $hap2 > /private/groups/migalab/kkyriaki/hprc_polishing/y2_alt_polishers/HPRC_samples_DV/assembly/${line}_diploid.fasta.gz
+    gunzip /private/groups/migalab/kkyriaki/hprc_polishing/y2_alt_polishers/HPRC_samples_DV/assembly/${line}_diploid.fasta.gz
+    samtools faidx /private/groups/migalab/kkyriaki/hprc_polishing/y2_alt_polishers/HPRC_samples_DV/assembly/${line}_diploid.fasta
   done
 
 # list for csv
 grep -v "sample_id" hprc_deepvariant.csv | cut -f1 -d"," | while read line; do
-    ls /private/groups/patenlab/mira/hprc_polishing/y2_alt_polishers/HPRC_samples_DV/assembly/${line}_diploid.fasta.fai
+    ls /private/groups/migalab/kkyriaki/hprc_polishing/y2_alt_polishers/HPRC_samples_DV/assembly/${line}_diploid.fasta.fai
   done
 
 # submit job
@@ -64,7 +64,7 @@ sbatch \
 ##                             write output files to csv                     ##
 ###############################################################################
 
-cd /private/groups/patenlab/mira/hprc_polishing/y2_alt_polishers/HPRC_samples_DV
+cd /private/groups/migalab/kkyriaki/hprc_polishing/y2_alt_polishers/HPRC_samples_DV
 
 ## collect location of QC results
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \

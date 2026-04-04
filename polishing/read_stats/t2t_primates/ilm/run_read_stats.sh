@@ -4,9 +4,9 @@
 
 ## on personal computer...
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/read_stats/t2t_primates/ilm/read_stats_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/read_stats/t2t_primates/ilm/read_stats_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../T2T_primates_all_manuscript.csv \
      --field_mapping ../read_stats_input_mapping.csv \
      --workflow_name read_stats
@@ -18,16 +18,16 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ###############################################################################
 
 ## on HPC...
-cd /private/groups/patenlab/mira/t2t_primates_polishing/read_stats/ilm
+cd /private/groups/patenlab/kkyriaki/t2t_primates_polishing/read_stats/ilm
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/patenlab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 
 ## get files to run ilmasm in sandbox...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/read_stats/t2t_primates/ilm/* ./
+cp -r /private/groups/patenlab/kkyriaki/phoenix_batch_submissions/polishing/read_stats/t2t_primates/ilm/* ./
 
 mkdir -p slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"

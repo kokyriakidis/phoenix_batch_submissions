@@ -1,7 +1,7 @@
 {
   "longReadAlignmentScattered.correctBamOptions": "--maxDiv 0.02",
   "longReadAlignmentScattered.preset": "map-pb",
-  "longReadAlignmentScattered.assemblyFasta": "/private/groups/patenlab/mira/hprc_polishing/data/HPRC_int_asm/dip_fastas/verkko/HG01981_verkko_trio+hic.dip.fasta",
+  "longReadAlignmentScattered.assemblyFasta": "/private/groups/migalab/kkyriaki/hprc_polishing/data/HPRC_int_asm/dip_fastas/verkko/HG01981_verkko_trio+hic.dip.fasta",
   "longReadAlignmentScattered.secphaseOptions": "--hifi",
   "longReadAlignmentScattered.enableRunningSecphase": true,
   "longReadAlignmentScattered.aligner": "winnowmap",

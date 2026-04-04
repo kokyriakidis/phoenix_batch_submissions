@@ -6,9 +6,9 @@
 
 # Remove top up data from data table
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/hprc_polishing_QC/optimize_GQ_filters_HPRC/hprc_polishing_QC_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/hprc_polishing_QC/optimize_GQ_filters_HPRC/hprc_polishing_QC_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../optimize_GQ_HPRC_int_asm.csv \
      --field_mapping ../hprc_polishing_QC_input_mapping.csv \
      --workflow_name hprc_polishing_QC
@@ -20,16 +20,16 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ###############################################################################
 
 ## on HPC...
-cd /private/groups/patenlab/mira/hprc_polishing/qv_problems/HPRC_intermediate_asm/optimize_GQ_filters
+cd /private/groups/patenlab/kkyriaki/hprc_polishing/qv_problems/HPRC_intermediate_asm/optimize_GQ_filters
 
 ## check that github repo is up to date
-git -C  /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C  /private/groups/patenlab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 
 ## get files to run hifiasm in sandbox...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/hprc_polishing_QC/optimize_GQ_filters_HPRC/* ./
+cp -r /private/groups/patenlab/kkyriaki/phoenix_batch_submissions/polishing/hprc_polishing_QC/optimize_GQ_filters_HPRC/* ./
 
 mkdir hprc_polishing_QC_submit_logs
 
@@ -49,7 +49,7 @@ grep -v "sample_id" optimize_GQ_HPRC_int_asm.csv | cut -f1 -d "," \
 tail -n2 ${sample_id}/hprc_polishing_QC_outputs/${sample_id}.polishing.QC.csv >> QC_results.csv ; done
 
 # update output json files with /private/groups locations
-cd /private/groups/patenlab/mira/hprc_polishing/qv_problems/HPRC_intermediate_asm/optimize_GQ_filters
+cd /private/groups/patenlab/kkyriaki/hprc_polishing/qv_problems/HPRC_intermediate_asm/optimize_GQ_filters
 
 # make copy of outputs file
 grep -v "sample_id" optimize_GQ_HPRC_int_asm.csv | cut -f1 -d "," \
@@ -60,7 +60,7 @@ grep -v "sample_id" optimize_GQ_HPRC_int_asm.csv | cut -f1 -d "," \
 | while read line ; do sample_id=$line ; \
 sed 's|,|\n|g' ${sample_id}/${sample_id}_hprc_polishing_QC_outputs.json | \
 cut -f 2 -d ":" | sed 's| ||g' | sed 's|}||g' | sed 's|"||g' | while read line ; do file=`basename $line`;\
-newpath="/private/groups/patenlab/mira/hprc_polishing/qv_problems/HPRC_intermediate_asm/optimize_GQ_filters/${sample_id}/hprc_polishing_QC_outputs/${file}" ; \
+newpath="/private/groups/patenlab/kkyriaki/hprc_polishing/qv_problems/HPRC_intermediate_asm/optimize_GQ_filters/${sample_id}/hprc_polishing_QC_outputs/${file}" ; \
 sed -i "s|${line}|${newpath}|g" ${sample_id}/${sample_id}_hprc_polishing_QC_outputs_updated.json ;done; done
 
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \

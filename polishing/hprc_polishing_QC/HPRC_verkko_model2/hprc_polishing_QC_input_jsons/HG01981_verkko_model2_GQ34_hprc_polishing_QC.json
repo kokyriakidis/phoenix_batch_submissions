@@ -1,7 +1,7 @@
 {
-  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/patenlab/mira/hprc_polishing/data/HPRC_int_asm/dip_fastas/verkko_model2_GQ34_polished/HG01981_verkko_model2.GQ34_DP_polished.Hap1.fasta",
-  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/patenlab/mira/hprc_polishing/data/HPRC_int_asm/dip_fastas/verkko_model2_GQ34_polished/HG01981_verkko_model2.GQ34_DP_polished.Hap2.fasta",
-  "hprc_polishing_QC.polishingVcf": "/private/groups/patenlab/mira/t2t_primates_polishing/DeepPolisher/verkko_model2_primate_optimized_filters/HG01981_polisher_output_GQ34.vcf.gz",
+  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/migalab/kkyriaki/hprc_polishing/data/HPRC_int_asm/dip_fastas/verkko_model2_GQ34_polished/HG01981_verkko_model2.GQ34_DP_polished.Hap1.fasta",
+  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/migalab/kkyriaki/hprc_polishing/data/HPRC_int_asm/dip_fastas/verkko_model2_GQ34_polished/HG01981_verkko_model2.GQ34_DP_polished.Hap2.fasta",
+  "hprc_polishing_QC.polishingVcf": "/private/groups/migalab/kkyriaki/t2t_primates_polishing/DeepPolisher/verkko_model2_primate_optimized_filters/HG01981_polisher_output_GQ34.vcf.gz",
   "hprc_polishing_QC.sampleReadsIlm": [
     "s3://human-pangenomics/submissions/AD30A684-C7A8-4D24-89B2-040DFF021B0C--Y2_1000G_DATA/HG01981/Illumina/child/HG01981.final.cram"
   ],

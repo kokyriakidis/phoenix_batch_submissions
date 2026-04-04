@@ -11,7 +11,7 @@
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --partition=high_priority
-#SBATCH --mail-user=mmastora@ucsc.edu
+#SBATCH --mail-user=kkyriaki@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=800gb
 #SBATCH --threads-per-core=1

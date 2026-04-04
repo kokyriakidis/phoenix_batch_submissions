@@ -7,10 +7,10 @@
 
 # Remove top up data from data table
 
-mkdir -p ~/Desktop/github_repos/phoenix_batch_submissions/workflows/applyPolish/applyPolish_input_jsons
-cd ~/Desktop/github_repos/phoenix_batch_submissions/workflows/applyPolish/applyPolish_input_jsons
+mkdir -p ~/Downloads/phoenix_batch_submissions/workflows/applyPolish/applyPolish_input_jsons
+cd ~/Downloads/phoenix_batch_submissions/workflows/applyPolish/applyPolish_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../applyPolish.csv \
      --field_mapping ../applyPolish_input_mapping.csv \
      --workflow_name applyPolish
@@ -27,14 +27,14 @@ ls | while read line ; do sed 's|genotype1|1|g' $line > $line.tmp ; mv $line.tmp
 ## on HPC...
 
 ## check that github repo is up to date
-git -C  /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C  /private/groups/migalab/kkyriaki/phoenix_batch_submissions pull
 
 # move to working dir
-mkdir -p /private/groups/patenlab/mira/phoenix_batch_executions/workflows/applyPolish
-cd /private/groups/patenlab/mira/phoenix_batch_executions/workflows/applyPolish
+mkdir -p /private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/applyPolish
+cd /private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/applyPolish
 
 ## get files
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/workflows/applyPolish/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/workflows/applyPolish/* ./
 
 mkdir -p slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
@@ -42,14 +42,14 @@ export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
 # submit job
 sbatch \
      --job-name=applyPolish \
-     --array=[33-36]%10 \
+     --array=[39-40]%10 \
      --partition=short \
      --time=1:00:00 \
      --cpus-per-task=16 \
      --exclude=phoenix-[09,10,22,23,24,18] \
      --mem=400gb \
      --mail-type=FAIL,END \
-     --mail-user=mmastora@ucsc.edu \
+     --mail-user=kkyriaki@ucsc.edu \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
      --wdl ~/progs/hpp_production_workflows/QC/wdl/tasks/applyPolish.wdl \
      --sample_csv applyPolish.csv \
@@ -60,7 +60,7 @@ sbatch \
 ###############################################################################
 
 # on hprc after entire batch has finished
-cd /private/groups/patenlab/mira/phoenix_batch_executions/workflows/applyPolish
+cd /private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/applyPolish
 
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
       --input_data_table ./applyPolish.csv \

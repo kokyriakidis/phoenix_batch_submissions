@@ -1,7 +1,7 @@
 {
-  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/patenlab/mira/WashU_pedigree/hprc_DeepPolisher/PAN027/analysis/hprc_DeepPolisher_outputs/PAN027_Hap1.polished.fasta",
-  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/patenlab/mira/WashU_pedigree/hprc_DeepPolisher/PAN027/analysis/hprc_DeepPolisher_outputs/PAN027_Hap2.polished.fasta",
-  "hprc_polishing_QC.polishingVcf": "/private/groups/patenlab/mira/WashU_pedigree/hprc_DeepPolisher/PAN027/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz",
+  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/migalab/kkyriaki/WashU_pedigree/hprc_DeepPolisher/PAN027/analysis/hprc_DeepPolisher_outputs/PAN027_Hap1.polished.fasta",
+  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/migalab/kkyriaki/WashU_pedigree/hprc_DeepPolisher/PAN027/analysis/hprc_DeepPolisher_outputs/PAN027_Hap2.polished.fasta",
+  "hprc_polishing_QC.polishingVcf": "/private/groups/migalab/kkyriaki/WashU_pedigree/hprc_DeepPolisher/PAN027/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz",
   "hprc_polishing_QC.sampleReadsIlm": [
     "/private/groups/migalab/mcechova/washu/Illumina/PAN027.cell.HTTMGDSX2_CCTGCAAGAC-GCATCATAGC_L002_R1.fastq.gz",
     "/private/groups/migalab/mcechova/washu/Illumina/PAN027.cell.HTTMGDSX2_CCTGCAAGAC-GCATCATAGC_L002_R2.fastq.gz"

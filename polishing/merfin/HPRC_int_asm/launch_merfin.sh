@@ -11,7 +11,7 @@
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --partition=high_priority
-#SBATCH --mail-user=mmastora@ucsc.edu
+#SBATCH --mail-user=kkyriaki@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
 #SBATCH --threads-per-core=1
@@ -59,7 +59,7 @@ time toil-wdl-runner \
     --batchSystem single_machine \
     --maxCores "${SLURM_CPUS_PER_TASK}" \
     --batchLogsDir ./toil_logs \
-    /private/home/mmastora/progs/hpp_production_workflows/QC/wdl/tasks/merfin.wdl \
+    /private/home/kkyriaki/progs/hpp_production_workflows/QC/wdl/tasks/merfin.wdl \
     ../merfin_input_jsons/${sample_id}_merfin.json \
     --outputDirectory ./merfin_outputs \
     --outputFile ${sample_id}_merfin_outputs.json \

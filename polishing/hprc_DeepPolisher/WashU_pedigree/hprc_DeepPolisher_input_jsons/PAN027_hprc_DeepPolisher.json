@@ -13,6 +13,6 @@
   ],
   "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/migalab/mcechova/pedigree_assemblies/verkko2.0/assemblies/unified/PAN027/phased/fixed/PAN027.fully_phased.paternal.fixed.fa",
   "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/migalab/mcechova/pedigree_assemblies/verkko2.0/assemblies/unified/PAN027/phased/fixed/PAN027.fully_phased.maternal.fixed.fa",
-  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/migalab/kkyriaki/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
   "hprc_DeepPolisher.sampleName": "PAN027"
 }

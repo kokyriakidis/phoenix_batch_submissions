@@ -6,9 +6,9 @@
 
 # Remove top up data from data table
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/merqury_GIAB_callable_polished/DP_manuscript/merqury_GIAB_callable_polished_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/merqury_GIAB_callable_polished/DP_manuscript/merqury_GIAB_callable_polished_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../Merqury_GIAB_callable_polished.csv \
      --field_mapping ../merqury_GIAB_callable_polished_input_mapping.csv \
      --workflow_name merqury_GIAB_callable_polished
@@ -21,16 +21,16 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 
 ## on HPC...
 
-cd /private/groups/patenlab/mira/hprc_polishing/polisher_evaluation/Merqury_GIAB_callable_polished/DP_manuscript/
+cd /private/groups/migalab/kkyriaki/hprc_polishing/polisher_evaluation/Merqury_GIAB_callable_polished/DP_manuscript/
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/migalab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that github repo is up to date
-git -C /private/home/mmastora/progs/hpp_production_workflows/QC/wdl/ pull
+git -C /private/home/kkyriaki/progs/hpp_production_workflows/QC/wdl/ pull
 
 ## get files to run in sandbox...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/merqury_GIAB_callable_polished/DP_manuscript/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/polishing/merqury_GIAB_callable_polished/DP_manuscript/* ./
 
 mkdir -p slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
@@ -45,16 +45,16 @@ sbatch \
      --cpus-per-task=32 \
      --mem=400gb \
      --mail-type=FAIL,END \
-     --mail-user=mmastora@ucsc.edu \
+     --mail-user=kkyriaki@ucsc.edu \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
-     --wdl /private/home/mmastora/progs/hpp_production_workflows/QC/wdl/workflows/merqury_GIAB_callable_polished.wdl \
+     --wdl /private/home/kkyriaki/progs/hpp_production_workflows/QC/wdl/workflows/merqury_GIAB_callable_polished.wdl \
      --sample_csv Merqury_GIAB_callable_polished.csv \
      --input_json_path '../merqury_GIAB_callable_polished_input_jsons/${SAMPLE_ID}_merqury_GIAB_callable_polished.json'
 
 
 ######################### Get outputs ##########################
 
-cd /private/groups/patenlab/mira/hprc_polishing/polisher_evaluation/Merqury_GIAB_callable_polished/DP_manuscript/
+cd /private/groups/migalab/kkyriaki/hprc_polishing/polisher_evaluation/Merqury_GIAB_callable_polished/DP_manuscript/
 
 ## collect location of QC results
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \

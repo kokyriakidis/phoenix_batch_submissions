@@ -11,7 +11,7 @@
   ],
   "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/cgl/pnhebbar/marmoset/assemblies/maisie/hifiasm_hic/hap1.fa",
   "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/cgl/pnhebbar/marmoset/assemblies/maisie/hifiasm_hic/hap2.fa",
-  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/migalab/kkyriaki/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
   "hprc_DeepPolisher.sampleName": "Maisie_hifiasm_hic",
   "hprc_DeepPolisher.DeepPolisherDocker": "google/deepconsensus:polisher_v0.0.8_12122023"
 }

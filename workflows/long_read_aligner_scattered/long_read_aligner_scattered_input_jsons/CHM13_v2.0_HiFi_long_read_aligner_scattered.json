@@ -1,7 +1,7 @@
 {
   "longReadAlignmentScattered.correctBamOptions": "--maxDiv 0.02",
   "longReadAlignmentScattered.preset": "map-hifi",
-  "longReadAlignmentScattered.assemblyFasta": "/private/groups/patenlab/mira/data/chm13v2.0.fa",
+  "longReadAlignmentScattered.assemblyFasta": "/private/groups/migalab/kkyriaki/data/chm13v2.0.fa",
   "longReadAlignmentScattered.secphaseOptions": "--hifi",
   "longReadAlignmentScattered.enableRunningSecphase": true,
   "longReadAlignmentScattered.aligner": "minimap2",

@@ -5,9 +5,9 @@
 ## on personal computer...
 
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/kmer_polisher_eval/HPRC_int_asm_GQ_filters/kmer_polisher_eval_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/kmer_polisher_eval/HPRC_int_asm_GQ_filters/kmer_polisher_eval_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../HPRC_int_asm_GQ_filters_applyPolish_updated.csv \
      --field_mapping ../kmer_polisher_eval_input_mapping.csv \
      --workflow_name kmer_polisher_eval
@@ -19,16 +19,16 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ###############################################################################
 
 ## on HPC...
-cd /private/groups/patenlab/mira/hprc_polishing/qv_problems/HPRC_intermediate_asm/GQ_filters/kmer_polisher_eval
+cd /private/groups/migalab/kkyriaki/hprc_polishing/qv_problems/HPRC_intermediate_asm/GQ_filters/kmer_polisher_eval
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/migalab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that hpp production wdls github repo is up to date
-git -C /private/home/mmastora/progs/hpp_production_workflows pull
+git -C /private/home/kkyriaki/progs/hpp_production_workflows pull
 
 ## get files to run hifiasm in sandbox...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/kmer_polisher_eval/HPRC_int_asm_GQ_filters/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/polishing/kmer_polisher_eval/HPRC_int_asm_GQ_filters/* ./
 
 mkdir kmer_polisher_eval_submit_logs
 

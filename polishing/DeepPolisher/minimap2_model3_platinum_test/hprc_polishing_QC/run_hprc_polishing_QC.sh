@@ -6,9 +6,9 @@
 
 # Remove top up data from data table
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/DeepPolisher/minimap2_model3_platinum_test/hprc_polishing_QC/hprc_polishing_QC_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/DeepPolisher/minimap2_model3_platinum_test/hprc_polishing_QC/hprc_polishing_QC_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../samples.deepPolisher.applyPolish_updated.csv \
      --field_mapping ../hprc_polishing_QC_input_mapping.csv \
      --workflow_name hprc_polishing_QC
@@ -19,19 +19,19 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ##                             create launch polishing                      ##
 ###############################################################################
 
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test/hprc_polishing_QC
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test/hprc_polishing_QC
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/migalab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that hpp production wdls github repo is up to date
-git -C /private/home/mmastora/progs/hpp_production_workflows pull
+git -C /private/home/kkyriaki/progs/hpp_production_workflows pull
 
 # move to work dir
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test/hprc_polishing_QC
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test/hprc_polishing_QC
 
 ## get files to run in polishing folder ...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/DeepPolisher/minimap2_model3_platinum_test/hprc_polishing_QC/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/polishing/DeepPolisher/minimap2_model3_platinum_test/hprc_polishing_QC/* ./
 
 mkdir hprc_polishing_QC_submit_logs
 
@@ -46,7 +46,7 @@ sbatch \
 # combined output csv files
 ls | grep "HG" | while read line ; do cat $line/hprc_polishing_QC_outputs/${line}.polishing.QC.csv >> all_samples.csv ; done
 
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test/hprc_polishing_QC
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test/hprc_polishing_QC
 
 # make copy of outputs file
 grep -v "sample_id" samples.deepPolisher.applyPolish_updated.csv | cut -f1 -d "," \
@@ -57,7 +57,7 @@ grep -v "sample_id" samples.deepPolisher.applyPolish_updated.csv | cut -f1 -d ",
 | while read line ; do sample_id=$line ; \
 sed 's|,|\n|g' ${sample_id}/${sample_id}_hprc_polishing_QC_outputs.json | \
 cut -f 2 -d ":" | sed 's| ||g' | sed 's|}||g' | sed 's|"||g' | while read line ; do file=`basename $line`;\
-newpath="/private/groups/patenlab/mira/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test/hprc_polishing_QC/${sample_id}/hprc_polishing_QC_outputs/${file}" ; \
+newpath="/private/groups/migalab/kkyriaki/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test/hprc_polishing_QC/${sample_id}/hprc_polishing_QC_outputs/${file}" ; \
 sed -i "s|${line}|${newpath}|g" ${sample_id}/${sample_id}_hprc_polishing_QC_outputs_updated.json ;done; done
 
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \

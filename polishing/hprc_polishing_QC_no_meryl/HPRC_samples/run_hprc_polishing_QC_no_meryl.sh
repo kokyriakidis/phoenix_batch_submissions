@@ -4,9 +4,9 @@
 
 ## on personal computer...
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/hprc_polishing_QC_no_meryl/HPRC_samples/hprc_polishing_QC_no_meryl_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/hprc_polishing_QC_no_meryl/HPRC_samples/hprc_polishing_QC_no_meryl_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../hprc_samples.csv \
      --field_mapping ../hprc_polishing_QC_no_meryl_input_mapping.csv \
      --workflow_name hprc_polishing_QC_no_meryl
@@ -18,16 +18,16 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ###############################################################################
 
 ## on HPC...
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_int_asm/HPRC_samples/hprc_polishing_QC_no_meryl
+cd /private/groups/patenlab/kkyriaki/hprc_polishing/hprc_int_asm/HPRC_samples/hprc_polishing_QC_no_meryl
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/patenlab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 
 ## get files to run hifiasm in sandbox...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/hprc_polishing_QC_no_meryl/HPRC_samples/* ./
+cp -r /private/groups/patenlab/kkyriaki/phoenix_batch_submissions/polishing/hprc_polishing_QC_no_meryl/HPRC_samples/* ./
 
 mkdir -p slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
@@ -38,7 +38,7 @@ sbatch \
      --array=[1]%1 \
      --partition=high_priority \
      --mail-type=FAIL,END \
-     --mail-user=mmastora@ucsc.edu \
+     --mail-user=kkyriaki@ucsc.edu \
      --cpus-per-task=32 \
      --mem=400gb \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \

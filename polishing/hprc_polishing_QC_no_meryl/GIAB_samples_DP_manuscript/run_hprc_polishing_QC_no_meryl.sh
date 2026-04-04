@@ -4,9 +4,9 @@
 
 ## on personal computer...
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/hprc_polishing_QC_no_meryl/GIAB_samples_DP_manuscript/hprc_polishing_QC_no_meryl_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/hprc_polishing_QC_no_meryl/GIAB_samples_DP_manuscript/hprc_polishing_QC_no_meryl_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../GIAB_samples_polisher_evaluation_manuscript.csv \
      --field_mapping ../hprc_polishing_QC_no_meryl_input_mapping.csv \
      --workflow_name hprc_polishing_QC_no_meryl
@@ -18,16 +18,16 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ###############################################################################
 
 ## on HPC...
-cd /private/groups/patenlab/mira/hprc_polishing/polisher_evaluation/GIAB_samples_manuscript/hprc_polishing_QC_no_meryl
+cd /private/groups/migalab/kkyriaki/hprc_polishing/polisher_evaluation/GIAB_samples_manuscript/hprc_polishing_QC_no_meryl
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/migalab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that github repo is up to date
 git -C /private/groups/hprc/polishing/hpp_production_workflows/ pull
 
 ## get files to run hifiasm in sandbox...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/hprc_polishing_QC_no_meryl/GIAB_samples_DP_manuscript/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/polishing/hprc_polishing_QC_no_meryl/GIAB_samples_DP_manuscript/* ./
 
 mkdir -p slurm_logs
 export PYTHONPATH="/private/home/juklucas/miniconda3/envs/toil/bin/python"
@@ -39,7 +39,7 @@ sbatch \
      --exclude=phoenix-[09,10,22,23,24,18] \
      --partition=high_priority \
      --mail-type=FAIL,END \
-     --mail-user=mmastora@ucsc.edu \
+     --mail-user=kkyriaki@ucsc.edu \
      --cpus-per-task=32 \
      --mem=400gb \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
@@ -54,7 +54,7 @@ sbatch \
      --exclude=phoenix-[09,10,22,23,24] \
      --partition=long \
      --mail-type=FAIL,END \
-     --mail-user=mmastora@ucsc.edu \
+     --mail-user=kkyriaki@ucsc.edu \
      --cpus-per-task=32 \
      --mem=400gb \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
@@ -70,7 +70,7 @@ sbatch \
      --exclude=phoenix-[09,10,22,23,24] \
      --partition=long \
      --mail-type=FAIL,END \
-     --mail-user=mmastora@ucsc.edu \
+     --mail-user=kkyriaki@ucsc.edu \
      --cpus-per-task=32 \
      --mem=400gb \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
@@ -86,7 +86,7 @@ sbatch \
      --exclude=phoenix-[09,10,22,23,24] \
      --partition=long \
      --mail-type=FAIL,END \
-     --mail-user=mmastora@ucsc.edu \
+     --mail-user=kkyriaki@ucsc.edu \
      --cpus-per-task=32 \
      --mem=400gb \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
@@ -101,7 +101,7 @@ sbatch \
      --exclude=phoenix-[09,10,22,23,24] \
      --partition=long \
      --mail-type=FAIL,END \
-     --mail-user=mmastora@ucsc.edu \
+     --mail-user=kkyriaki@ucsc.edu \
      --cpus-per-task=32 \
      --mem=400gb \
      /private/groups/hprc/hprc_intermediate_assembly/hpc/toil_sbatch_single_machine.sh \
@@ -113,7 +113,7 @@ sbatch \
 ##                             write output files to csv                     ##
 ###############################################################################
 
-cd /private/groups/patenlab/mira/hprc_polishing/polisher_evaluation/GIAB_samples_manuscript/hprc_polishing_QC_no_meryl
+cd /private/groups/migalab/kkyriaki/hprc_polishing/polisher_evaluation/GIAB_samples_manuscript/hprc_polishing_QC_no_meryl
 
 ## collect location of QC results
 python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
@@ -122,4 +122,4 @@ python3 /private/groups/hprc/hprc_intermediate_assembly/hpc/update_table_with_ou
       --json_location '{sample_id}_hprc_polishing_QC_no_meryl_outputs.json'
 
 
-meryl count threads=32 k=31 /private/groups/patenlab/mira/hprc_polishing/data/reads/HG002/illumina/HG002_HiSeq30x_subsampled_R1.fastq.gz /private/groups/patenlab/mira/hprc_polishing/data/reads/HG002/illumina/HG002_HiSeq30x_subsampled_R2.fastq.gz output /private/groups/patenlab/mira/hprc_polishing/polisher_evaluation/meryl_dbs/HG002.k31.redownload.meryl
+meryl count threads=32 k=31 /private/groups/migalab/kkyriaki/hprc_polishing/data/reads/HG002/illumina/HG002_HiSeq30x_subsampled_R1.fastq.gz /private/groups/migalab/kkyriaki/hprc_polishing/data/reads/HG002/illumina/HG002_HiSeq30x_subsampled_R2.fastq.gz output /private/groups/migalab/kkyriaki/hprc_polishing/polisher_evaluation/meryl_dbs/HG002.k31.redownload.meryl

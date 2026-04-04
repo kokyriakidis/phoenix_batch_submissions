@@ -6,14 +6,14 @@
 
 # Generate toil json files from csv sample table
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/DeepPolisher/minimap2_model3_platinum_test_docker_v0.1.0/applyPolish/applyPolish_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/DeepPolisher/minimap2_model3_platinum_test_docker_v0.1.0/applyPolish/applyPolish_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../samples.deepPolisher_updated.csv \
      --field_mapping ../applyPolish.input.mapping.mat.csv \
      --workflow_name applyPolish.mat
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../samples.deepPolisher_updated.csv \
      --field_mapping ../applyPolish.input.mapping.pat.csv \
      --workflow_name applyPolish.pat
@@ -24,17 +24,17 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ##                             create launch polishing                      ##
 ###############################################################################
 
-mkdir -p /private/groups/patenlab/mira/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test_docker_v0.1.0/applyPolish
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test_docker_v0.1.0/applyPolish
+mkdir -p /private/groups/migalab/kkyriaki/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test_docker_v0.1.0/applyPolish
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test_docker_v0.1.0/applyPolish
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/migalab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that hpp production wdls github repo is up to date
-git -C /private/home/mmastora/progs/hpp_production_workflows pull
+git -C /private/home/kkyriaki/progs/hpp_production_workflows pull
 
 ## get files to run in polishing folder ...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/DeepPolisher/minimap2_model3_platinum_test_docker_v0.1.0/applyPolish/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/polishing/DeepPolisher/minimap2_model3_platinum_test_docker_v0.1.0/applyPolish/* ./
 
 mkdir applyPolish_submit_logs
 
@@ -50,7 +50,7 @@ sbatch \
 
 
 # on hprc after entire batch has finished
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test_docker_v0.1.0/applyPolish
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_deepPolisher_wf_runs/minimap2_model3_platinum_test_docker_v0.1.0/applyPolish
 
 python3 /private/groups/hprc/polishing/hprc_intermediate_assembly/hpc/update_table_with_outputs.py \
       --input_data_table ./samples.deepPolisher_updated.csv \

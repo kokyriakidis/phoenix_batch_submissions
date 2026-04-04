@@ -11,7 +11,7 @@
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --partition=medium
-#SBATCH --mail-user=mmastora@ucsc.edu
+#SBATCH --mail-user=kkyriaki@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
 #SBATCH --threads-per-core=1
@@ -59,7 +59,7 @@ time toil-wdl-runner \
     --batchSystem single_machine \
     --maxCores "${SLURM_CPUS_PER_TASK}" \
     --batchLogsDir ./toil_logs \
-    /private/home/mmastora/progs/hpp_production_workflows/QC/wdl/workflows/applyPolish_dipcall.wdl \
+    /private/home/kkyriaki/progs/hpp_production_workflows/QC/wdl/workflows/applyPolish_dipcall.wdl \
     ../applyPolish_dipcall_input_jsons/${sample_id}_applyPolish_dipcall.json \
     --outputDirectory ./applyPolish_dipcall_outputs \
     --outputFile ${sample_id}_applyPolish_dipcall_outputs.json \
@@ -75,7 +75,7 @@ toil stats --outputFile stats.txt ./jobstore
 if [[ "${EXITCODE}" == "0" ]] ; then
     echo "Succeeded.Running Happy"
     mkdir -p ./happy_outputs
-    bash /private/home/mmastora/progs/scripts/HG005_happy.sh \
+    bash /private/home/kkyriaki/progs/scripts/HG005_happy.sh \
     `pwd`/applyPolish_dipcall_outputs/*vcf.gz \
     `pwd`/applyPolish_dipcall_outputs/*.bed \
     `pwd`/happy_outputs/${sample_id}_happy_out

@@ -6,9 +6,9 @@
 
 # Generate toil json files from csv sample table
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/meryl_hybrid/hprc_int_asm/meryl_hybrid_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/meryl_hybrid/hprc_int_asm/meryl_hybrid_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../HPRC_int_asm_batch2_3_4.samples.csv \
      --field_mapping ../meryl_hybrid_input_mapping.csv \
      --workflow_name meryl_hybrid
@@ -20,16 +20,16 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ###############################################################################
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/migalab/kkyriaki/phoenix_batch_submissions pull
 
 ## check that hpp production wdls github repo is up to date
-git -C /private/home/mmastora/progs/hpp_production_workflows pull
+git -C /private/home/kkyriaki/progs/hpp_production_workflows pull
 
 # move to work dir
-cd /private/groups/patenlab/mira/hprc_polishing/hprc_int_asm/meryl_hybrid
+cd /private/groups/migalab/kkyriaki/hprc_polishing/hprc_int_asm/meryl_hybrid
 
 ## get files to run in polishing folder ...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/meryl_hybrid/hprc_int_asm/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/polishing/meryl_hybrid/hprc_int_asm/* ./
 
 mkdir -p meryl_hybrid_submit_logs
 

@@ -1,6 +1,6 @@
 {
   "runDeepPolisher.useOptimalGQFilter": true,
-  "runDeepPolisher.ModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-460.tar.gz",
+  "runDeepPolisher.ModelFilesTarGZ": "/private/groups/migalab/kkyriaki/hprc_polishing/data/DeepPolisher_models/checkpoint-460.tar.gz",
   "runDeepPolisher.Bai": "s3://human-pangenomics/backup/Sergey/HG002/65xrevio_100xcorrectedONT_300xONT/assembly.bam.bai",
   "runDeepPolisher.Bam": "s3://human-pangenomics/backup/Sergey/HG002/65xrevio_100xcorrectedONT_300xONT/assembly.bam",
   "runDeepPolisher.dockerImage": "google/deepconsensus:polisher_v0.2.0_hybrid_cov_60_03092026",

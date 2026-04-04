@@ -1,7 +1,7 @@
 {
   "hprc_polishing_QC.polishedHap1Fasta": NaN,
   "hprc_polishing_QC.polishedHap2Fasta": NaN,
-  "hprc_polishing_QC.polishingVcf": "/private/groups/patenlab/mira/hprc_polishing/deepPolisher_runs/phoenix_batch_submissions_manuscript/HG005_hifi_verkko_model_2/analysis/DeepPolisher_outputs/polisher_output.no_filters.vcf.gz",
+  "hprc_polishing_QC.polishingVcf": "/private/groups/migalab/kkyriaki/hprc_polishing/deepPolisher_runs/phoenix_batch_submissions_manuscript/HG005_hifi_verkko_model_2/analysis/DeepPolisher_outputs/polisher_output.no_filters.vcf.gz",
   "hprc_polishing_QC.sampleReadsIlm": NaN,
   "hprc_polishing_QC.maternalYak": NaN,
   "hprc_polishing_QC.paternalYak": NaN,

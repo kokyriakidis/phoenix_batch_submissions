@@ -3,7 +3,7 @@
   "hprc_polishing_QC.polishedHap2Fasta": NaN,
   "hprc_polishing_QC.polishingVcf": NaN,
   "hprc_polishing_QC.sampleReadsIlm": [
-    "/private/groups/patenlab/mira/t2t_primates_polishing/reads/ilm/mPanPan1/bwa.analysis-dip.illumina.dedup.bam"
+    "/private/groups/migalab/kkyriaki/t2t_primates_polishing/reads/ilm/mPanPan1/bwa.analysis-dip.illumina.dedup.bam"
   ],
   "hprc_polishing_QC.maternalYak": NaN,
   "hprc_polishing_QC.paternalYak": NaN,

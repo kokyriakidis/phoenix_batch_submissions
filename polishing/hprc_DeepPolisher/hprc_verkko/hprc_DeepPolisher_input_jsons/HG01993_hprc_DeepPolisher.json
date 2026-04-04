@@ -14,6 +14,6 @@
   ],
   "hprc_DeepPolisher.Hap1RawFasta": "/private/groups/hprc/verkko/batch1/HG01993/verkko/hic_asm/HG01993_verkko_trio+hic.hap1.fasta.gz",
   "hprc_DeepPolisher.Hap2RawFasta": "/private/groups/hprc/verkko/batch1/HG01993/verkko/hic_asm/HG01993_verkko_trio+hic.hap2.fasta.gz",
-  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
+  "hprc_DeepPolisher.DeepPolisherModelFilesTarGZ": "/private/groups/migalab/kkyriaki/hprc_polishing/data/DeepPolisher_models/checkpoint-665.tar.gz",
   "hprc_DeepPolisher.sampleName": "HG01993"
 }

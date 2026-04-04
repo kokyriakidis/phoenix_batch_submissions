@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --partition=medium
-#SBATCH --mail-user=mmastora@ucsc.edu
+#SBATCH --mail-user=kkyriaki@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
 #SBATCH --threads-per-core=1
@@ -36,11 +36,11 @@ echo "${sample_id}"
 mkdir -p ${sample_id}
 cd ${sample_id}
 
-source /private/home/mmastora/progs/miniconda3/etc/profile.d/conda.sh
+source /private/home/kkyriaki/progs/miniconda3/etc/profile.d/conda.sh
 conda activate analysis
 
 # run happy
-bash /private/home/mmastora/progs/scripts/GIAB_happy.sh \
+bash /private/home/kkyriaki/progs/scripts/GIAB_happy.sh \
     `pwd`/applyPolish_dipcall_outputs/*vcf.gz \
     ${bed_file} \
     `pwd`/happy_outputs/${sample_id}_happy_out \

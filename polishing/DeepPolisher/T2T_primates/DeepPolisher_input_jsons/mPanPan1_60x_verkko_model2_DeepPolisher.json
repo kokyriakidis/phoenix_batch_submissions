@@ -1,6 +1,6 @@
 {
   "runDeepPolisher.useOptimalGQFilter": true,
-  "runDeepPolisher.ModelFilesTarGZ": "/private/groups/patenlab/mira/hprc_polishing/data/DeepPolisher_models/checkpoint-72.tar.gz",
+  "runDeepPolisher.ModelFilesTarGZ": "/private/groups/migalab/kkyriaki/hprc_polishing/data/DeepPolisher_models/checkpoint-72.tar.gz",
   "runDeepPolisher.Bai": NaN,
   "runDeepPolisher.Bam": NaN,
   "runDeepPolisher.dockerImage": "google/deepconsensus:polisher_v0.1.0_06202024",

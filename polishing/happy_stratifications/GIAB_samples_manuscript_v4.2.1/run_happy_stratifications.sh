@@ -1,18 +1,18 @@
 ## on HPC...
-cd /private/groups/patenlab/mira/hprc_polishing/polisher_evaluation/GIAB_samples_manuscript/happy_stratifications
+cd /private/groups/migalab/kkyriaki/hprc_polishing/polisher_evaluation/GIAB_samples_manuscript/happy_stratifications
 
 ## check that github repo is up to date
-git -C /private/groups/patenlab/mira/phoenix_batch_submissions pull
+git -C /private/groups/migalab/kkyriaki/phoenix_batch_submissions pull
 
 ## get files to run hifiasm in sandbox...
-cp -r /private/groups/patenlab/mira/phoenix_batch_submissions/polishing/happy_stratifications/GIAB_samples_manuscript_v4.2.1/* ./
+cp -r /private/groups/migalab/kkyriaki/phoenix_batch_submissions/polishing/happy_stratifications/GIAB_samples_manuscript_v4.2.1/* ./
 
 #
 mkdir -p slurm_logs
 sbatch launch_happy.sh GIAB_samples_polisher_evaluation_manuscript.csv
 
 # combine outputs files
-cd /private/groups/patenlab/mira/hprc_polishing/polisher_evaluation/GIAB_samples_manuscript/happy_stratifications
+cd /private/groups/migalab/kkyriaki/hprc_polishing/polisher_evaluation/GIAB_samples_manuscript/happy_stratifications
 
 ls | grep "HG" | while read line
     do echo $line
@@ -30,7 +30,7 @@ ls | grep "HG" | while read line
 # for CHR20 only HG002
 
 # combine outputs files
-cd /private/groups/patenlab/mira/hprc_polishing/polisher_evaluation/GIAB_samples_manuscript/applyPolish_dipcall_happy/
+cd /private/groups/migalab/kkyriaki/hprc_polishing/polisher_evaluation/GIAB_samples_manuscript/applyPolish_dipcall_happy/
 
 ls | grep "HG" | while read line
     do echo $line

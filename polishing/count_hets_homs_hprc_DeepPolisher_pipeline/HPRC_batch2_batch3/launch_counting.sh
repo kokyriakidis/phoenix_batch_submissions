@@ -11,7 +11,7 @@
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --partition=high_priority
-#SBATCH --mail-user=mmastora@ucsc.edu
+#SBATCH --mail-user=kkyriaki@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=600gb
 #SBATCH --threads-per-core=1
@@ -125,7 +125,7 @@ docker run --rm -u `id -u`:`id -g` \
 jmcdani20/hap.py:v0.3.12 /opt/hap.py/bin/hap.py \
 `pwd`/raw_dipcall_outputs/*.dipcall.vcf.gz \
 `pwd`/polished_dipcall_outputs/*dipcall.vcf.gz \
--r /private/groups/patenlab/mira/data/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta \
+-r /private/groups/migalab/kkyriaki/data/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta \
 -o `pwd`/happy_counting/${sample_id}.happy.out \
 --pass-only --no-roc --no-json --engine=vcfeval --threads="${SLURM_CPUS_PER_TASK}"
 

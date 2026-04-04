@@ -1,7 +1,7 @@
 {
-  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/patenlab/mira/phoenix_batch_executions/workflows/hprc_DeepPolisher/Maisie_hifiasm_hic/analysis/hprc_DeepPolisher_outputs/Maisie_hifiasm_hic_Hap1.polished.fasta",
-  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/patenlab/mira/phoenix_batch_executions/workflows/hprc_DeepPolisher/Maisie_hifiasm_hic/analysis/hprc_DeepPolisher_outputs/Maisie_hifiasm_hic_Hap2.polished.fasta",
-  "hprc_polishing_QC.polishingVcf": "/private/groups/patenlab/mira/phoenix_batch_executions/workflows/hprc_DeepPolisher/Maisie_hifiasm_hic/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz",
+  "hprc_polishing_QC.polishedHap1Fasta": "/private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/hprc_DeepPolisher/Maisie_hifiasm_hic/analysis/hprc_DeepPolisher_outputs/Maisie_hifiasm_hic_Hap1.polished.fasta",
+  "hprc_polishing_QC.polishedHap2Fasta": "/private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/hprc_DeepPolisher/Maisie_hifiasm_hic/analysis/hprc_DeepPolisher_outputs/Maisie_hifiasm_hic_Hap2.polished.fasta",
+  "hprc_polishing_QC.polishingVcf": "/private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/hprc_DeepPolisher/Maisie_hifiasm_hic/analysis/hprc_DeepPolisher_outputs/polisher_output.vcf.gz",
   "hprc_polishing_QC.sampleReadsIlm": [
     "/private/groups/cgl/pnhebbar/marmoset/Maisie/genomic_data/Maisie_Illumina/220_GT23-08863_CTGTTGACNNNNNNNNN-ACCTCAGT_S18_L001_R1_001.fastq.gz",
     "/private/groups/cgl/pnhebbar/marmoset/Maisie/genomic_data/Maisie_Illumina/220_GT23-08863_CTGTTGACNNNNNNNNN-ACCTCAGT_S18_L001_R2_001.fastq.gz",
@@ -22,8 +22,8 @@
     "/private/groups/cgl/pnhebbar/marmoset/Maisie/genomic_data/Maisie_Illumina/220_GT23-08863_CTGTTGACNNNNNNNNN-ACCTCAGT_S73_L003_R1_001.fastq.gz",
     "/private/groups/cgl/pnhebbar/marmoset/Maisie/genomic_data/Maisie_Illumina/220_GT23-08863_CTGTTGACNNNNNNNNN-ACCTCAGT_S73_L003_R2_001.fastq.gz"
   ],
-  "hprc_polishing_QC.maternalYak": "/private/groups/patenlab/mira/phoenix_batch_executions/workflows/hprc_DeepPolisher/Maisie_hifiasm_hic/analysis/hprc_DeepPolisher_outputs/Maisie_hifiasm_hic_Hap2.polished.fasta",
-  "hprc_polishing_QC.paternalYak": "/private/groups/patenlab/mira/phoenix_batch_executions/workflows/hprc_DeepPolisher/Maisie_hifiasm_hic/analysis/hprc_DeepPolisher_outputs/Maisie_hifiasm_hic_Hap2.polished.fasta",
+  "hprc_polishing_QC.maternalYak": "/private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/hprc_DeepPolisher/Maisie_hifiasm_hic/analysis/hprc_DeepPolisher_outputs/Maisie_hifiasm_hic_Hap2.polished.fasta",
+  "hprc_polishing_QC.paternalYak": "/private/groups/migalab/kkyriaki/phoenix_batch_executions/workflows/hprc_DeepPolisher/Maisie_hifiasm_hic/analysis/hprc_DeepPolisher_outputs/Maisie_hifiasm_hic_Hap2.polished.fasta",
   "hprc_polishing_QC.grch38OutsideConfRegions": "/private/groups/hprc/ref_files/giab/outside_HG002_intersect_HG005_GIAB_v4.2.1.bed",
   "hprc_polishing_QC.referenceFasta": "/private/groups/hprc/ref_files/grch38/hs38DH.fa",
   "hprc_polishing_QC.grch38InsideConfRegions": "/private/groups/hprc/ref_files/giab/HG002_intersect_HG005_GIAB_v4.2.1.bed",

@@ -11,7 +11,7 @@
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --partition=high_priority
-#SBATCH --mail-user=mmastora@ucsc.edu
+#SBATCH --mail-user=kkyriaki@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=600gb
 #SBATCH --threads-per-core=1
@@ -21,7 +21,7 @@
 
 set -ex
 
-tar -zcvf /private/groups/patenlab/mira/hprc_polishing/polisher_evaluation/meryl_dbs/HG002.k31.meryl.tar.gz /private/groups/patenlab/mira/hprc_polishing/polisher_evaluation/meryl_dbs/HG002.k31.meryl
+tar -zcvf /private/groups/patenlab/kkyriaki/hprc_polishing/polisher_evaluation/meryl_dbs/HG002.k31.meryl.tar.gz /private/groups/patenlab/kkyriaki/hprc_polishing/polisher_evaluation/meryl_dbs/HG002.k31.meryl
 ## Pull samples names from CSV passed to script
 sample_file=$1
 
@@ -60,7 +60,7 @@ time toil-wdl-runner \
     --batchSystem single_machine \
     --maxCores "${SLURM_CPUS_PER_TASK}" \
     --batchLogsDir ./toil_logs \
-    /private/home/mmastora/progs/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC_no_meryl.wdl \
+    /private/home/kkyriaki/progs/hpp_production_workflows/QC/wdl/workflows/hprc_polishing_QC_no_meryl.wdl \
     ../hprc_polishing_QC_no_meryl_input_jsons/${sample_id}_hprc_polishing_QC_no_meryl.json \
     --outputDirectory ./hprc_polishing_QC_no_meryl_outputs \
     --outputFile ${sample_id}_hprc_polishing_QC_no_meryl_outputs.json \

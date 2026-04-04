@@ -5,5 +5,5 @@
   ],
   "bwaAlignment.sampleName": "PAN011_ele_to_PAN011_raw_hap2_XY",
   "bwaAlignment.suffix": "bwa_0.7.17-r1188",
-  "bwaAlignment.assembly": "/private/groups/patenlab/mira/washu_pedigree_polishing/assemblies/assembly.v1.0.PAN011.haplotype2.XY.fa"
+  "bwaAlignment.assembly": "/private/groups/migalab/kkyriaki/washu_pedigree_polishing/assemblies/assembly.v1.0.PAN011.haplotype2.XY.fa"
 }

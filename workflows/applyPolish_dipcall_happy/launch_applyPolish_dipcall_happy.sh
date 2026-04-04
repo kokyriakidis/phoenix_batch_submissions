@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --partition=medium
-#SBATCH --mail-user=mmastora@ucsc.edu
+#SBATCH --mail-user=kkyriaki@ucsc.edu
 #SBATCH --mail-type=FAIL,END
 #SBATCH --mem=200gb
 #SBATCH --threads-per-core=1
@@ -57,7 +57,7 @@ time toil-wdl-runner \
     --batchSystem single_machine \
     --maxCores "${SLURM_CPUS_PER_TASK}" \
     --batchLogsDir ./toil_logs \
-    /private/home/mmastora/progs/hpp_production_workflows/QC/wdl/workflows/applyPolish_dipcall.wdl \
+    /private/home/kkyriaki/progs/hpp_production_workflows/QC/wdl/workflows/applyPolish_dipcall.wdl \
     ../applyPolish_dipcall_happy_input_jsons/${sample_id}_applyPolish_dipcall_happy.json \
     --outputDirectory ./applyPolish_dipcall_happy_outputs \
     --outputFile ${sample_id}_applyPolish_dipcall_happy_outputs.json \
@@ -75,7 +75,7 @@ mkdir -p `pwd`/happy_outputs/
 if [[ "${EXITCODE}" == "0" ]] ; then
     echo "Succeeded.Running Happy"
     mkdir -p ./happy_outputs
-    bash /private/home/mmastora/progs/scripts/GIAB_happy.sh \
+    bash /private/home/kkyriaki/progs/scripts/GIAB_happy.sh \
     `pwd`/applyPolish_dipcall_happy_outputs/*vcf.gz \
     ${bed_file} \
     `pwd`/happy_outputs/${sample_id}_happy_out \
@@ -89,7 +89,7 @@ fi
 mkdir -p happy_chr20_out
 
 # run happy
-bash /private/home/mmastora/progs/scripts/GIAB_happy_chr20.sh \
+bash /private/home/kkyriaki/progs/scripts/GIAB_happy_chr20.sh \
     `pwd`/applyPolish_dipcall_happy_outputs/*polished.dipcall.vcf.gz\
     ${bed_file} \
     `pwd`/happy_chr20_out/${sample_id}_happy_out \
@@ -99,7 +99,7 @@ bash /private/home/mmastora/progs/scripts/GIAB_happy_chr20.sh \
 mkdir -p happy_chr20_22_out
 
 # run happy
-bash /private/home/mmastora/progs/scripts/GIAB_happy_chr20_21_22.sh \
+bash /private/home/kkyriaki/progs/scripts/GIAB_happy_chr20_21_22.sh \
     `pwd`/applyPolish_dipcall_happy_outputs/*polished.dipcall.vcf.gz\
     ${bed_file} \
     `pwd`/happy_chr20_22_out/${sample_id}_happy_out \

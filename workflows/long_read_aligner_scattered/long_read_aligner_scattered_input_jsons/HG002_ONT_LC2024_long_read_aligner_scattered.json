@@ -1,7 +1,7 @@
 {
   "longReadAlignmentScattered.correctBamOptions": "--maxDiv 0.02",
   "longReadAlignmentScattered.preset": "lr:hqae",
-  "longReadAlignmentScattered.assemblyFasta": "/private/groups/patenlab/mira/ONT_DeepPolisher/assemblies/hifiasm_ONT_Q25_10122025/GIAB_HG002_RAW_HIFIASM_v0.25.0.bp.dip.p_ctg.fasta",
+  "longReadAlignmentScattered.assemblyFasta": "/private/groups/migalab/kkyriaki/ONT_DeepPolisher/assemblies/hifiasm_ONT_Q25_10122025/GIAB_HG002_RAW_HIFIASM_v0.25.0.bp.dip.p_ctg.fasta",
   "longReadAlignmentScattered.secphaseOptions": "--ont",
   "longReadAlignmentScattered.enableRunningSecphase": true,
   "longReadAlignmentScattered.aligner": "minimap2",

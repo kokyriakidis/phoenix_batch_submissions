@@ -6,9 +6,9 @@
 
 # Remove top up data from data table
 
-cd /Users/miramastoras/Desktop/Paten_lab/phoenix_batch_submissions/polishing/hprc_polishing_QC/optimize_GQ_filters_HPRC/annotate_edit_with_fp_kmers/annotate_edit_with_fp_kmers_input_jsons
+cd /Users/kokyriakidis/Desktop/Paten_lab/phoenix_batch_submissions/polishing/hprc_polishing_QC/optimize_GQ_filters_HPRC/annotate_edit_with_fp_kmers/annotate_edit_with_fp_kmers_input_jsons
 
-python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/launch_from_table.py \
+python3 /Users/kokyriakidis/Downloads/phoenix_batch_submissions/launch_from_table.py \
      --data_table ../optimize_GQ_HPRC_int_asm.QC_results.csv \
      --field_mapping ../annotate_edit_with_fp_kmers_input_mapping.csv \
      --workflow_name annotate_edit_with_fp_kmers
@@ -20,7 +20,7 @@ python3 /Users/miramastoras/Desktop/Paten_lab/hprc_intermediate_assembly/hpc/lau
 ###############################################################################
 
 ## on HPC...
-cd /private/home/mmastora/progs
+cd /private/home/kkyriaki/progs
 
 ## clone flagger repo
 git clone https://github.com/mobinasri/flagger.git
@@ -30,7 +30,7 @@ git checkout polishing_temp
 git -C  /private/groups/patenlab/mira/phoenix_batch_submissions pull
 
 ## check that github repo is up to date
-git -C /private/home/mmastora/progs/flagger pull
+git -C /private/home/kkyriaki/progs/flagger pull
 
 # move to working dir
 mkdir -p /private/groups/patenlab/mira/hprc_polishing/qv_problems/HPRC_intermediate_asm/optimize_GQ_filters/annotate_edit_with_fp_kmers
